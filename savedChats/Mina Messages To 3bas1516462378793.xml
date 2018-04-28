@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="styleSheet.xsl" type="text/xsl" ?><chat>
+<chatWith>Mina</chatWith>
+<message>
+<messageBody>ezayak</messageBody>
+<from>me</from>
+<color>BLACK</color>
+<direction>right</direction>
+</message>
+<message>
+<messageBody>Kewayeeees
+</messageBody>
+<direction>left</direction>
+<from>other</from>
+<color>BLACK</color>
+</message>
+<message>
+<messageBody>l7l</messageBody>
+<direction>left</direction>
+<from>other</from>
+<color>BLACK</color>
+</message>
+<message>
+<messageBody>b5er</messageBody>
+<direction>left</direction>
+<from>other</from>
+<color>BLACK</color>
+</message>
+<message>
+<messageBody>wenta</messageBody>
+<direction>left</direction>
+<from>other</from>
+<color>BLACK</color>
+</message>
+<message>
+<messageBody>ana btnf5 fel tslem</messageBody>
+<from>me</from>
+<color>BLACK</color>
+<direction>right</direction>
+</message>
+<message>
+<messageBody>ya raaaagl</messageBody>
+<direction>left</direction>
+<from>other</from>
+<color>BLACK</color>
+</message>
+<message>
+<messageBody>ah wlahi</messageBody>
+<from>me</from>
+<color>BLACK</color>
+<direction>right</direction>
+</message>
+</chat>

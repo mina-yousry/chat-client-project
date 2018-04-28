@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="941.0" style="-fx-background-color: #3D3C40;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ServerUIController">
+   <children>
+      <AnchorPane fx:id="anchor" layoutX="-9.0" prefHeight="50.0" prefWidth="949.0" style="-fx-background-color: #3D3C40;">
+         <children>
+            <Label layoutX="323.0" prefHeight="64.0" prefWidth="435.0" text="Cloud Chat Server" textAlignment="CENTER" textFill="#b5cf74" wrapText="true">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="915.0" layoutY="11.0" onMousePressed="#closeWindow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/x.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="50.0" layoutX="877.0" layoutY="6.0" onMousePressed="#minimizeWindow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Minimize.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TabPane layoutY="64.0" prefHeight="583.0" prefWidth="942.0" style="-fx-background-color: #a1b76a; overflow: hidden;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="mainTab" text="Main">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c7ced8;">
+                     <children>
+                        <Button layoutX="374.0" layoutY="257.0" mnemonicParsing="false" onAction="#resumeServer" prefHeight="55.0" prefWidth="144.0" style="-fx-background-color: #3D3C40; -fx-background-radius: 2;" text="Start Server" textFill="#b5cf74">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font></Button>
+                        <Button layoutX="374.0" layoutY="332.0" mnemonicParsing="false" onAction="#stopServer" prefHeight="57.0" prefWidth="143.0" style="-fx-background-color: #3D3C40;" text="Close Server" textFill="#b5cf74">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font></Button>
+                        <ImageView fitHeight="261.0" fitWidth="421.0" layoutX="228.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="onoff" layoutX="357.0" layoutY="426.0" prefHeight="87.0" prefWidth="228.0" textAlignment="CENTER" textFill="#5f8c96">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="statisticsTab" text="Statistics">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D3C40;">
+                     <children>
+                        <PieChart fx:id="pc" layoutY="62.0" prefHeight="442.0" prefWidth="496.0" style="-fx-background-color: #c7ced8;" />
+                        <PieChart fx:id="pc1" layoutX="458.0" layoutY="61.0" prefHeight="444.0" prefWidth="482.0" style="-fx-background-color: #c7ced8;" />
+                        <Button layoutX="395.0" layoutY="35.0" mnemonicParsing="false" onAction="#pie" onKeyPressed="#pie" prefHeight="52.0" prefWidth="152.0" style="-fx-background-color: #3D3C40;" text="Show Pie Chart" textFill="#b5cf74">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="userDataTab" onSelectionChanged="#fillTabel" text="UserData">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="942.0" style="-fx-background-color: #c7ced8;">
+                     <children>
+                        <TableView fx:id="table" layoutX="15.0" layoutY="59.0" prefHeight="356.0" prefWidth="912.0" />
+                        <TextArea fx:id="textarea" layoutX="14.0" layoutY="430.0" prefHeight="70.0" prefWidth="450.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextArea>
+                        <Button layoutX="361.0" layoutY="6.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="44.0" prefWidth="198.0" style="-fx-background-color: #3D3C40;" text="Refresh Table" textFill="#b5cf74">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="733.0" layoutY="438.0" mnemonicParsing="false" onAction="#notifyAllUsers" prefHeight="54.0" prefWidth="160.0" style="-fx-background-color: #3D3C40;" text="Send Notification" textAlignment="CENTER" textFill="#b5cf74" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="587.0" layoutY="440.0" mnemonicParsing="false" onAction="#sendImage" prefHeight="51.0" prefWidth="126.0" style="-fx-background-color: #3D3C40;" text="Upload Image" textFill="#b5cf74">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="imageView" fitHeight="71.0" fitWidth="102.0" layoutX="471.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="446.0" layoutY="-34.0" mnemonicParsing="false" onAction="#fillTabel" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #5f8c96;" text="Show Users Data" textFill="WHITE" />
+   </children>
+</AnchorPane>
